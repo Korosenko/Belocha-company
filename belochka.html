@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutty Tech | Innovative Tech Solutions</title>
+    <style>
+        /* Color Palette Variables based on the logo */
+        :root {
+            --dark-bg: #1c1412;       /* Deep chocolate brown background */
+            --card-bg: #291e1b;       /* Slightly lighter brown for cards */
+            --tech-cyan: #00d2ff;     /* Bright circuit board cyan */
+            --brand-orange: #f29924;  /* Warm squirrel orange */
+            --text-light: #ffffff;    /* Primary text */
+            --text-gray: #a69c99;     /* Secondary text */
+        }
+
+        /* Global Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Bar */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Use your actual logo file name here */
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .logo-text span {
+            color: var(--brand-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--tech-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span.cyan {
+            color: var(--tech-cyan);
+        }
+
+        .hero-content h1 span.orange {
+            color: var(--brand-orange);
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Modern CTA Buttons */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-orange);
+            color: var(--dark-bg);
+            border: 2px solid var(--brand-orange);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--brand-orange);
+            box-shadow: 0 0 15px rgba(242, 153, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--tech-cyan);
+            border: 2px solid var(--tech-cyan);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--tech-cyan);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
+
+        /* Featured Visual Component */
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-main-logo {
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Tech Glow Effect behind the logo */
+        .glow-circle {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none; /* Can be turned into a mobile menu later */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-area">
+                <!-- Replace 'logo.png' with your actual logo image path -->
+                <img src="logo.png" alt="Nutty Tech Logo" class="logo-img">
+                <div class="logo-text">Nutty<span>Tech</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- Left Content Area -->
+                <div class="hero-content">
+                    <h1>We Crack The <span class="cyan">Hardest</span> Tech <span class="orange">Problems</span></h1>
+                    <p>Smart, hardware-driven solutions integrated with intelligent circuit architecture. Nutty Tech brings cutting-edge computing infrastructure down to earth.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#services" class="btn btn-secondary">Our Tech</a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Area -->
+                <div class="hero-image-wrapper">
+                    <div class="glow-circle"></div>
+                    <!-- Replace 'logo.png' with your actual logo image path -->
+                    <img src="logo.png" alt="Nutty Tech Visual" class="hero-main-logo">
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>
